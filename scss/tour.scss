@@ -323,6 +323,13 @@
   .nextBtn {
     margin-left: 20px;
   }
+
+  .prevBtn,
+  .nextBtn {
+    &.disable {
+      text-decoration: none;
+    }
+  }
 }
 
 
