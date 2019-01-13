@@ -64,10 +64,7 @@
 
 /*========== 熱門行政區: HOT ==========*/
 #hotTags {
-  margin: {
-    top: -28px;
-    bottom: 77px;
-  }
+  margin-top: -28px;
 }
 
 .hot {
@@ -116,8 +113,9 @@
 }
 
 .breakLine {
-  margin-top: 25px;
-  border-bottom: 1px dashed $c-primary;
+  margin-top: 37px;
+  margin-bottom: 37px;
+  border-top: 1px dashed $c-primary;
 }
 
 .arrow {
@@ -128,7 +126,7 @@
   background-color: $body-bg;
   z-index: 1;
   position: relative;
-  top: 12px;
+  top: -12px;
 
   &:before {
     @include pseudo();

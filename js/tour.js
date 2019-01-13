@@ -2755,7 +2755,7 @@ data = data.result.records;
     }
     
     NOW_PAGE = pageNum;
-    window.scrollTo(0, 600);
+    location.href = "#result";
     setPageBtnClass(pageNum);
     renderSinglePage(pageNum);
   });
