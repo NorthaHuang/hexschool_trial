@@ -1,0 +1,29 @@
+/*========== Init ==========*/
+@import "init/variables";
+@import "init/functions/functions";
+@import "init/mixins/mixins";
+@import "init/extends";
+@import "init/reset";
+
+
+
+
+
+/*========== Basic Setting ==========*/
+.container {
+  width: 100%;
+  max-width: 1024px;
+  padding: {
+    left: 40px;
+    right: 40px;
+  }
+}
+
+
+/*========== HERO ==========*/
+#hero {  /* <section> */
+  height: 380px;
+  background-image: url('../images/Hero.png');
+  background-size: cover;
+  background-position: top center;
+}
