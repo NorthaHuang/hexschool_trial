@@ -2597,10 +2597,6 @@ data = data.result.records;
   var pageContent = document.querySelector('.page-content');
   var goTopBtn = document.querySelector('#goTop');
 
-  goTopBtn.addEventListener('click', function () {
-    window.scrollTo(0, 0);
-  });
-
   // Render Select
   var allZone = [];
   for (var i = 0; i < data.length; i++) {
@@ -2695,18 +2691,6 @@ data = data.result.records;
     nextBtn = document.querySelector('.nextBtn');
   }
 
-  zoneSelect.addEventListener('change', function (evt) {
-    renderResult(evt.target.value);
-  });
-  hotTagList.addEventListener('click', function (evt) {
-    if (evt.target.nodeName !== 'LI') {
-      return;
-    }
-    var nowZone = evt.target.textContent;
-    zoneSelect.value = nowZone;
-    renderResult(nowZone);
-  });
-
   function setPageBtnClass(pageNum) {
     var allBtn = pageContent.querySelectorAll('button');
     for (var i=0; i<allBtn.length; i++) {
@@ -2723,6 +2707,25 @@ data = data.result.records;
       allBtn[allBtn.length-1].classList.add(DIS_CLASS_NAME);
     }
   }
+
+
+
+  zoneSelect.addEventListener('change', function (evt) {
+    renderResult(evt.target.value);
+  });
+
+  hotTagList.addEventListener('click', function (evt) {
+    if (evt.target.nodeName !== 'LI') {
+      return;
+    }
+    var nowZone = evt.target.textContent;
+    zoneSelect.value = nowZone;
+    renderResult(nowZone);
+  });
+
+  goTopBtn.addEventListener('click', function () {
+    window.scrollTo(0, 0);
+  });
 
   var DIS_CLASS_NAME = 'disable';
   pageContent.addEventListener('click', function (evt) {
@@ -2752,6 +2755,7 @@ data = data.result.records;
     }
     
     NOW_PAGE = pageNum;
+    window.scrollTo(0, 600);
     setPageBtnClass(pageNum);
     renderSinglePage(pageNum);
   });
